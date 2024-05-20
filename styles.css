@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-image: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&q=80&cs=tinysrgb&fm=jpg&crop=entropy&w=4800');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    text-align: center;
+    color: #fff;
+    padding-top: 50px; /* Espaciado superior */
+}
+main {
+    background-color: #e6f2ff; /* Azul claro */
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    color: #333;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+ul .anidada li{
+    list-style-type: circle;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul {
+    list-style-type: disc;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+.skills-container {
+    display: flex;
+}
+
+.hard-skills, .soft-skills {
+    flex: 1;
+}
+
+.soft-skills {
+    margin-left: 20px; /* Ajusta el margen izquierdo para separar las hard skills de las soft skills */
+}
