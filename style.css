@@ -1,0 +1,224 @@
+:root{
+  --bg:#0e0f12;
+  --surface:#15171c;
+  --muted:#a2a6b0;
+  --text:#eef1f5;
+  --primary:#245c94;
+  --accent:#2B6EF5;
+  --radius:16px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+
+/* ===== Topbar ===== */
+.topbar{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.6rem 1rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:var(--bg);
+}
+.brand{display:flex;align-items:center;gap:.75rem;}
+.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.15)}
+.brand-meta{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-weight:700}
+.brand-role{font-size:.8rem;color:var(--muted)}
+
+.mainnav{display:flex;gap:.5rem;align-items:center}
+.tab-btn{
+  border:1px solid rgba(255,255,255,.14);
+  background:var(--surface);color:var(--text);
+  padding:.45rem .8rem;
+  border-radius:999px;
+  cursor:pointer;transition:.2s;
+}
+.tab-btn:hover{transform:translateY(-1px);}
+
+/* Mobile burger */
+.hamburger{display:none;background:transparent;border:0;cursor:pointer}
+.hamburger span{display:block;width:26px;height:3px;background:#fff;margin:5px 0;border-radius:2px}
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
+  padding:5rem 1.25rem;
+  gap:1rem;flex-direction:column;align-items:center
+}
+.mobile-menu.open{display:flex}
+.mobile-menu .close{
+  position:absolute;top:1rem;right:1rem;
+  font-size:2rem;background:transparent;border:0;color:#fff;cursor:pointer
+}
+
+/* ===== Layout ===== */
+main{max-width:var(--maxw);margin:0 auto;padding:2rem 1rem}
+
+/* ===== Hero ===== */
+.hero{display:flex;align-items:center;justify-content:center;padding:3rem 0}
+.hero-inner{text-align:center}
+
+/* Botón CV */
+.cv-btn{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+  border-radius:10px;
+  padding:.4rem .7rem;
+  cursor:pointer;
+  margin-bottom:1rem
+}
+
+/* Título del hero */
+.hero-title{margin:.2rem 0 0; line-height:1.05; text-align:center}
+.hero-title .role{
+  display:block;
+  font-size:clamp(1.6rem, 4vw, 2.6rem); /* MÁS GRANDE que antes */
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:.35rem;
+  letter-spacing:.2px;
+}
+.hero-title .name{
+  display:block;
+  font-size:clamp(2.2rem, 6vw, 4rem);     /* MÁS GRANDE */
+  font-weight:800;
+  color:var(--text);
+}
+
+/* Subtítulo debajo del nombre */
+.subtitle{color:var(--muted);margin:.6rem 0 1rem}
+
+/* CTA buttons */
+.cta-row{display:flex;gap:.6rem;justify-content:center;margin:1rem 0 1.2rem}
+.btn.primary{
+  background:var(--accent);border:0;color:#fff;padding:.6rem 1rem;border-radius:999px;
+  box-shadow:0 6px 18px rgba(43,110,245,.3);
+}
+
+/* Tech chips */
+.tech-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.6rem}
+.tech-chip{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,.1);
+  padding:.35rem .6rem;
+  border-radius:999px;
+  font-size:.9rem;
+  color:#d7dbdf
+}
+
+/* ===== Sections / Cards ===== */
+.section{margin-top:2.5rem}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.section h2{margin:0}
+.link-btn{background:transparent;border:0;color:#9ab7ff;cursor:pointer}
+
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:.2s;
+  cursor:pointer;
+}
+.card:hover{transform:translateY(-3px)}
+.card img{width:100%;height:160px;object-fit:cover}
+.card-body{padding:.9rem}
+.card-title{margin:.1rem 0 .4rem;font-weight:600}
+.card-desc{color:var(--muted);font-size:.95rem}
+
+/* ===== About ===== */
+.about-container{display:grid;grid-template-columns:280px 1fr;gap:1.5rem;align-items:start}
+.about-container img{width:100%;aspect-ratio:1/1;border-radius:20px;border:1px solid rgba(255,255,255,.1);object-fit:cover}
+.about-text h2{margin-top:0}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.skill{
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,.1);
+  padding:.35rem .6rem;
+  border-radius:999px;
+  color:#d7dbdf;
+  font-size:.9rem
+}
+
+.about-preview{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:1rem;align-items:center;
+  background:var(--surface);
+  padding:1rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.08)
+}
+.about-pic{width:100%;border-radius:999px;aspect-ratio:1/1;object-fit:cover}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .about-container{grid-template-columns:1fr}
+}
+@media (max-width: 680px){
+  .mainnav{display:none}
+  .hamburger{display:block}
+  .cards-grid{grid-template-columns:1fr}
+}
+
+/* ===== Language Switch ===== */
+.lang-switch {
+  display: flex;
+  gap: .5rem;
+  margin-left: 1rem;
+}
+
+.lang-switch button {
+  border: 1px solid rgba(255,255,255,.14);
+  background: var(--surface);
+  color: var(--text);
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: .2s;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.lang-switch button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.lang-switch button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ===== About: experiencia y skills ===== */
+#about-experience { display: grid; gap: 1rem; margin-bottom: 1.25rem; }
+.experience-item {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: .9rem 1rem;
+}
+.exp-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.25rem; }
+.exp-role { font-weight:700; }
+.exp-period { color: var(--muted); font-size:.9rem; }
+.exp-company { color:#cfd6dd; margin-bottom:.35rem; }
+.exp-details { color: var(--muted); margin:0; }
+
+#about-hard-skills, #about-soft-skills {
+  list-style: none; padding: 0; margin:.4rem 0 1.2rem;
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.chip {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: .35rem .65rem;
+  border-radius: 999px;
+  font-size: .9rem; color:#d7dbdf;
+}

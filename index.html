@@ -1,11 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebastian Rengifo — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>hola mundo</h1>
+  <!-- === Topbar === -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/162445171?v=4" alt="Sebastian avatar">
+      <div class="brand-meta">
+        <span class="brand-name">Sebastian Rengifo</span>
+        <span class="brand-role">Software Developer</span>
+      </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="mainnav">
+      <button class="tab-btn" data-tab="home">Inicio</button>
+      <button class="tab-btn" data-tab="projects">Proyectos</button>
+      <button class="tab-btn" data-tab="about">Sobre mí</button>
+    </nav>
+
+    <!-- Mobile burger -->
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close" aria-label="Cerrar" onclick="toggleMobileMenu(false)">✕</button>
+      <button class="tab-btn" data-tab="home">Inicio</button>
+      <button class="tab-btn" data-tab="projects">Proyectos</button>
+      <button class="tab-btn" data-tab="about">Sobre mí</button>
+    </div>
+
+    <!-- Language switch -->
+    <div class="lang-switch">
+      <button onclick="setLang('es')">ES</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- === HOME === -->
+    <section id="home" class="tab-content" style="display:block">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-inner">
+          <button class="cv-btn" onclick="window.open('docs/CV_RengifoGilSebastian.pdf','_blank')">📄 CV</button>
+          <h1 class="hero-title">
+            <span class="role">Software Developer</span>
+            <span class="name">Sebastian Rengifo</span>
+          </h1>
+          <p class="subtitle">Java, Spring Boot and Liferay</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.linkedin.com/in/sebastian-alejandro-rengifo-gil-51bb1a267" target="_blank">LinkedIn →</a>
+            <a class="btn primary" href="https://github.com/SebastianARG" target="_blank">GitHub →</a>
+          </div>
+          <div class="tech-row" id="tech-row"></div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Preview -->
+      <section class="section">
+        <div class="section-header">
+          <h2 id="home-featured-title">...</h2>
+          <button class="link-btn" data-tab="projects" id="home-viewall">...</button>
+        </div>
+        <div id="featured-grid" class="cards-grid"></div>
+      </section>
+
+      <!-- About Preview -->
+      <section class="section">
+        <div class="section-header">
+          <h2 id="home-about-title">...</h2>
+          <button class="link-btn" data-tab="about" id="home-readmore">...</button>
+        </div>
+        <div class="about-preview">
+          <img class="about-pic" src="https://avatars.githubusercontent.com/u/162445171?v=4" alt="Foto de perfil">
+          <p id="about-description-preview"></p>
+        </div>
+      </section>
+    </section>
+
+    <!-- === ABOUT === -->
+    <section id="about" class="tab-content" style="display:none">
+      <div class="about-container">
+        <img id="profile-pic" src="https://avatars.githubusercontent.com/u/162445171?v=4" alt="Foto de perfil">
+        <div class="about-text">
+          <h2 id="about-title"></h2>
+          <p id="about-description"></p>
+
+          <h3>Experiencia</h3>
+          <div id="about-experience"></div>
+
+          <h3>Hard Skills</h3>
+          <ul id="about-hard-skills"></ul>
+
+          <h3>Soft Skills</h3>
+          <ul id="about-soft-skills"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- === PROJECTS === -->
+    <section id="projects" class="tab-content" style="display:none">
+      <h2>Proyectos</h2>
+      <div id="projects-grid" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>

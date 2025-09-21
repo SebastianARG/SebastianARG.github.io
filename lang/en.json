@@ -1,0 +1,60 @@
+{
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About me"
+  },
+  "home": {
+    "featured_title": "Featured projects",
+    "view_all": "View all",
+    "about_title": "About me",
+    "read_more": "Read more"
+  },
+  "about": {
+    "title": "About me",
+    "image": "https://avatars.githubusercontent.com/u/162445171?v=4",
+    "description": "I am a developer passionate about creating impactful software solutions, specialized in backend and corporate portals.",
+    "experience": [
+      {
+        "company": "Ricoh Spain",
+        "role": "Dual Trainee Developer (Liferay / Java)",
+        "period": "November 2024 - August 2025",
+        "details": "Collaboration on corporate portal projects, custom module development, and code adaptation to internal standards."
+      }
+    ],
+    "skills": {
+      "hard": [
+        "Java & Spring Boot",
+        "Jakarta EE",
+        "Liferay 7.4",
+        "PostgreSQL / MySQL",
+        "Docker & Git",
+        "Python"
+      ],
+      "soft": [
+        "Teamwork",
+        "Problem solving",
+        "Adaptability",
+        "Effective communication",
+        "Continuous learning"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "id": "p1",
+        "name": "Institute Library",
+        "description": "This project involved the development of an API in which I took part in all stages: management, design, and programming across different environments. At the beginning, my work was mainly focused on coding, and later I transitioned into a role closer to that of a consultant and project manager. I was responsible for addressing questions, defining designs, supporting development issues, and ensuring compliance with best practices. In this way, I contributed to making the API scalable, reliable, and aligned with quality standards.",
+        "github": "https://github.com/AlexLopezGarcia/M13-Biblioteca_Ferreia/tree/develop"
+      },
+      {
+        "id": "p2",
+        "name": "Social Network for Book Lovers",
+        "description": "End-to-end application (backend and frontend) enabling bidirectional communication between users in a WhatsApp-like style. It also includes a book management system where users can access all available titles, mark favorites, track their read books, and share their reading lists with fellow book lovers to encourage interaction and discussions around books.",
+        "github": "https://github.com/SebastianARG/biblioteca-virtual "
+      }
+    ]
+  }
+}

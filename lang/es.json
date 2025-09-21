@@ -1,0 +1,60 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí"
+  },
+  "home": {
+    "featured_title": "Mis proyectos destacados",
+    "view_all": "Ver todos",
+    "about_title": "Sobre mí",
+    "read_more": "Leer más"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "image": "https://avatars.githubusercontent.com/u/162445171?v=4",
+    "description": "Soy un desarrollador apasionado por crear soluciones de software con impacto, especializado en backend y portales corporativos.",
+    "experience": [
+      {
+        "company": "Ricoh España",
+        "role": "Dual Trainee Developer (Liferay / Java)",
+        "period": "November 2024 - August 2025",
+        "details": "Colaboración en proyectos de portales corporativos, desarrollo de módulos personalizados y adaptación de código a estándares internos."
+      }
+    ],
+    "skills": {
+      "hard": [
+        "Java & Spring Boot",
+        "Jakarta EE",
+        "Liferay 7.4",
+        "PostgreSQL / MySQL",
+        "Docker & Git",
+        "Python"
+      ],
+      "soft": [
+        "Trabajo en equipo",
+        "Resolución de problemas",
+        "Adaptabilidad",
+        "Comunicación efectiva",
+        "Aprendizaje continuo"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": [
+      {
+        "id": "p1",
+        "name": "Biblioteca para instituto",
+        "description": "Este proyecto consistió en el desarrollo de una API en el que participé en todas las fases: gestión, diseño y programación de los diferentes entornos. Inicialmente, mi labor estuvo más centrada en la implementación técnica, mientras que posteriormente asumí un rol más cercano al de consultor y gestor del proyecto. Me encargaba de resolver dudas, definir diseños, apoyar en problemas de desarrollo y garantizar el cumplimiento de las buenas prácticas. De esta forma, aseguré que la API fuera escalable, funcional y se ajustara a los estándares de calidad requeridos.",
+        "github": "https://github.com/AlexLopezGarcia/M13-Biblioteca_Ferreia/tree/develop"
+      },
+      {
+        "id": "p2",
+        "name": "Red social para amantes de los libros",
+        "description": "Aplicación desarrollada de extremo a extremo (backend y frontend) que permite la comunicación bidireccional entre usuarios al estilo de WhatsApp. Además, integra un sistema de gestión de libros donde los usuarios pueden acceder a todos los títulos disponibles, marcar favoritos, registrar los leídos y compartir sus lecturas con otros amantes de los libros para fomentar la interacción y conversación en torno a ellos.",
+        "github": "https://github.com/SebastianARG/biblioteca-virtual"
+      }
+    ]
+  }
+}

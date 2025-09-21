@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle del Proyecto</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- === Topbar (igual que en index) === -->
+  <header class="topbar">
+    <div class="brand">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/162445171?v=4" alt="Sebastian avatar">
+      <div class="brand-meta">
+        <span class="brand-name">Sebastian Rengifo</span>
+        <span class="brand-role">Software Developer</span>
+      </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="mainnav">
+      <a class="tab-btn" href="index.html#home">Inicio</a>
+      <a class="tab-btn" href="index.html#projects">Proyectos</a>
+      <a class="tab-btn" href="index.html#about">Sobre mí</a>
+    </nav>
+
+    <!-- Mobile burger -->
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close" aria-label="Cerrar" onclick="toggleMobileMenu(false)">✕</button>
+      <a class="tab-btn" href="index.html#home">Inicio</a>
+      <a class="tab-btn" href="index.html#projects">Proyectos</a>
+      <a class="tab-btn" href="index.html#about">Sobre mí</a>
+    </div>
+
+    <!-- Language switch -->
+    <div class="lang-switch">
+      <button onclick="setLang('es')">ES</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- === Project Detail === -->
+  <main class="project-detail" style="max-width:var(--maxw);margin:0 auto;padding:2rem 1rem;">
+    <h1 id="project-title">Loading...</h1>
+    <img id="project-image" src="" alt="Project Image" style="width:100%;max-height:320px;object-fit:cover;border-radius:var(--radius);margin:1rem 0;" />
+    <p id="project-description"></p>
+    <p><a id="project-github" class="btn primary" href="#" target="_blank">Ver en GitHub →</a></p>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const lang = getLang();
+
+    fetch(`lang/${lang}.json`)
+      .then(res => res.json())
+      .then(data => {
+        const item = data.projects.items.find(p => p.id === id);
+        if (!item) return;
+        document.getElementById('project-title').textContent = item.name;
+        document.getElementById('project-description').textContent = item.description;
+        document.getElementById('project-image').src = `imgs/${id}.jpg`;
+        document.getElementById('project-github').href = item.github;
+      });
+  </script>
+</body>
+</html>
